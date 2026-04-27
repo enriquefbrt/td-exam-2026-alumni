@@ -7,11 +7,11 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: api-gw
+      app: storage
   template:
     metadata:
       labels:
-        app: api-gw
+        app: storage
     spec:
       containers:
         - name: storage
