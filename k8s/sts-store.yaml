@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: storage
-          image: gcr.io/icai2025-489720/storebackend-storage:latest
+          image: gcr.io/icai2025-489720/backend-storage:latest
           ports:
             - containerPort: 3000
           volumeMounts:
