@@ -7,25 +7,26 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: <placeholder>
+      app: api-gw
   template:
     metadata:
       labels:
-        app: <placeholder>
+        app: api-gw
     spec:
       containers:
         - name: router
-          image: <placeholder>
+          image: $IMAGE_NAME_ROUTER:latest
           ports:
             - containerPort: 3000
           volumeMounts:
-            - name: <placeholder>
+            - name: router-data
               mountPath: /data
   volumeClaimTemplates:
     - metadata:
-        name: <placeholder>
+        name: router-data
       spec:
-        accessModes: <placeholder>
+        accessModes:
+          - ReadWriteOnce
         storageClassName: standard
         resources:
           requests:

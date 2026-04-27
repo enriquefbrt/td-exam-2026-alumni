@@ -3,29 +3,30 @@ kind: StatefulSet
 metadata:
   name: sts-storage
 spec:
-  serviceName: <placeholder>
+  serviceName: svc-storage
   replicas: 1
   selector:
     matchLabels:
-      app: <placeholder>
+      app: api-gw
   template:
     metadata:
       labels:
-        app: <placeholder>
+        app: api-gw
     spec:
       containers:
         - name: storage
-          image: <placeholder>
+          image: $IMAGE_NAME_STORE:latest
           ports:
             - containerPort: 3000
           volumeMounts:
-            - name: <placeholder>
+            - name: storage
               mountPath: /data
   volumeClaimTemplates:
     - metadata:
-        name: <placeholder>
+        name: storage
       spec:
-        accessModes: <placeholder>
+        accessModes:
+          - ReadWriteOnce
         storageClassName: standard
         resources:
           requests:
