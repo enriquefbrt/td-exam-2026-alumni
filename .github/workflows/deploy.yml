@@ -53,7 +53,6 @@ jobs:
     - name: Deploy to GKE
       run: |
         gcloud container clusters get-credentials $GKE_CLUSTER --zone $GKE_ZONE
-        <placeholder - add all necessary lines>
         kubectl apply -f k8s/svc-api.yaml
         kubectl apply -f k8s/svc-router.yaml
         kubectl apply -f k8s/svc-store.yaml
