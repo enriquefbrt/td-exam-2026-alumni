@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
         - name: api-gw
-          image: $IMAGE_NAME_API:latest
+          image: gcr.io/icai2025-489720/api-gw:latest
           ports:
             - containerPort: 3000

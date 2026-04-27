@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: router
-          image: $IMAGE_NAME_ROUTER:latest
+          image: gcr.io/icai2025-489720/router:latest
           ports:
             - containerPort: 3000
           volumeMounts:
